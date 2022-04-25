@@ -1,0 +1,57 @@
+{{ define "main" }}
+
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+<section id="hero" class="section hero">
+    {{ if $data.homepage.topheaderimage.enable }}
+    {{ with $data.homepage.topheaderimage }}
+    <div class="container">
+        <div class="row row-content">
+            <div class="col-12 col-md-12 col-lg-6">
+                <div class="hero-headline"><span>{{ .title | markdownify }} </span> </div>
+                <div class="hero-action">
+                    <form class="mb-0 mailchimp" novalidate="true">
+                        <input type="email" class="form-control" placeholder="Enter CA Number" style="width: 100%;">
+                        <input type="submit" value="Proceed" class="btn btn--gradient">
+                    </form>
+                    <div class="subscribe-alert"></div>
+                </div>
+            </div>
+            <div class="col-12 col-md-12 col-lg-6">
+                <div class="hero-img">
+                    <img class="img-fluid" src="{{ .image | absURL }}" alt="{{ .title | markdownify }}">
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ end }}
+    {{ end }} 
+
+    <div class="works">
+        {{ if $data.homepage.customlinkbox.enable }}
+        {{ with $data.homepage.customlinkbox }}
+        <div class="container">
+           <div class="row">
+              <div class="col-md-12">
+                 <div class="titlepage">
+                 </div>
+              </div>
+           </div>
+           <div class="row">
+            {{ range .customlinkbox_item }}
+              <div class="col-md-6">
+                 <div id="white_bg" class="works_box">
+                    <h4>{{ .shorttitle | markdownify }} </h4>
+                    <h3 class="boxtitle">{{ .title | markdownify }} </h3>
+                    <p>{{ .content | markdownify }} </p>
+                    <a class="sub_btn" href="{{ .link | relLangURL }}">{{ .label | markdownify }}</a>
+                 </div>
+              </div>
+            {{ end }}
+           </div>
+        </div>
+        {{ end }}
+        {{ end }} 
+    </div>  
+</section>
+{{ end }}

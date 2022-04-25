@@ -1,0 +1,26 @@
+############################### topheaderimage ##################################
+topheaderimage:
+  enable : true
+  title : "WAYS TO ELECTRICITY BILL PAY"
+  image : "images/bg.png"
+  
+
+############################### customlinkbox ##################################
+customlinkbox:
+  enable : true
+  customlinkbox_item:
+    # about item loop
+    - shorttitle: "B.R.P.L"
+      title: "BSES RAJDHANI POWER LIMITED"
+      content : "A Joint Venture of Reliance Infrastructure Ltd. & Govt. of NCT of Delhi.BSES Bhawan, Nehru Place, New Delhi 110019 Nearest Landmark: Nehru Place Bus Terminus."
+      label: "Visit Site"
+      link: "#"
+
+    - shorttitle: "B.Y.P.L"
+      title: "BSES YAMUNA POWER LIMITED"
+      content : "A Joint Venture of Reliance Infrastructure Ltd. & Govt. of NCT of Delhi. Shakti Kiran Building, Karkardooma, Delhi - 110032 Nearest Landmark: Karkardooma Court."
+      label: "Visit Site"
+      link: "#"
+
+
+    
